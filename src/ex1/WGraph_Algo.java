@@ -116,8 +116,13 @@ public class WGraph_Algo implements weighted_graph_algorithms {
 			while (iterator.hasNext()) {
 			    neighboor = iterator.next();  
 				
-				if(neighboor.getTag() == -1)
+				if(neighboor.getTag() == -1 || pq.contains(neighboor))
 			    {
+					if(pq.contains(neighboor))
+					{
+						if(neighboor.getTag() < currentNode.getTag() + this.algoGraph.getEdge(currentNode.getKey(), neighboor.getKey()))
+							continue;
+					}
 			    	neighboor.setTag(currentNode.getTag()+this.algoGraph.getEdge(currentNode.getKey(), neighboor.getKey()));
 			    	if(neighboor.getKey() == dest)return neighboor.getTag();
 			    	pq.add(neighboor);
@@ -154,8 +159,13 @@ public class WGraph_Algo implements weighted_graph_algorithms {
 			while (iterator.hasNext()) {
 			    neighboor = iterator.next();  
 				
-				if(neighboor.getTag() == -1)
+				if(neighboor.getTag() == -1 || pq.contains(neighboor))
 			    {
+					if(pq.contains(neighboor))
+					{
+						if(neighboor.getTag() < currentNode.getTag() + this.algoGraph.getEdge(currentNode.getKey(), neighboor.getKey()))
+							continue;
+					}
 			    	neighboor.setTag(currentNode.getTag()+this.algoGraph.getEdge(currentNode.getKey(), neighboor.getKey()));
 					parents.put(neighboor.getKey(), currentNode); // Making a HashMap where the parent is contained in the key of its child's
 					
