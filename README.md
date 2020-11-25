@@ -1,4 +1,4 @@
-# Object-Oriented-Programming-Course-Ariel-University-
+# Exercise 1
 This repository will contain my exercises solutions. [2020], Exersice 1 is about weighted graphs and Junit tests.
 
 We make weighted graphs using node_info as an inner class.
